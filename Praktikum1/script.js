@@ -30,9 +30,9 @@ function renderTasks() {
         <small>Deadline: ${task.deadline}</small>
       </div>
       <div>
-        <button onclick="toggleComplete(${index})">✔</button>
-        <button onclick="editTask(${index})">✏️</button>
-        <button onclick="deleteTask(${index})">🗑️</button>
+        <button onclick="toggleComplete(${index})">Complete</button>
+        <button onclick="editTask(${index})">Edit</button>
+        <button onclick="deleteTask(${index})">Delete</button>
       </div>
     `;
     taskList.appendChild(li);
