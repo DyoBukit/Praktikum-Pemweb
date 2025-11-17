@@ -19,14 +19,23 @@ Aplikasi **Manajemen Tugas Mahasiswa** adalah aplikasi web sederhana yang berfun
 
 > Tambahkan screenshot aplikasi di folder `screenshots/` lalu perbarui link di bawah ini.
 
-1. **Tampilan Form Tambah Tugas**  
-   ![Form](./screenshots/form.png)
+**1. Tampilan Awal Aplikasi**
+![Tampilan Awal](./TampilanAwal.png)
 
-2. **Tampilan Daftar Tugas**  
-   ![List](./screenshots/list.png)
+**2. Tampilan Semua Tugas**
+![Tampilan Semua Tugas](./TampilanAllTugas.png)
 
-3. **Filter & Pencarian Tugas**  
-   ![Filter](./screenshots/filter.png)
+**3. Fitur Filter Berdasarkan Deadline**
+![Filter Tanggal](./FiturTgl.png)
+
+**4. Fitur Menandai Tugas Selesai**
+![Fitur Finished](./FiturFinished.png)
+
+**5. Filter Tugas Belum Selesai**
+![Filter Not Finished](./FiturFilterNotFinished.png)
+
+**6. Fitur Menandai Tugas Sebagai Complete**
+![Fitur Complete](./FiturComplete.png)
 
 ---
 
