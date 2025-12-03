@@ -1,4 +1,4 @@
-# ✨ Personal Dashboard – JavaScript Project
+# ✨ Reminder Dashboard – JavaScript Project
 
 Project ini adalah **Reminder Dashboard interaktif** berbasis HTML, CSS, dan JavaScript.  
 Dashboard memiliki beberapa fitur utama seperti:
