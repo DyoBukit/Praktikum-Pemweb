@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reminder Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>✨ My Dashboard</h1>
+      <div id="clock" class="clock">--:--:--</div>
+    </header>
+
+    <main>
+      <section class="card" id="tasksCard">
+        <h2>Daftar Tugas</h2>
+        <form id="taskForm" class="inline-form">
+          <input id="taskTitle" placeholder="Judul tugas" required />
+          <input id="taskDue" type="date" required />
+          <select id="taskPriority">
+            <option value="normal">Normal</option>
+            <option value="important">Penting</option>
+          </select>
+          <button type="submit">Tambah</button>
+        </form>
+
+        <div class="controls">
+          <input id="taskSearch" placeholder="Cari tugas..." />
+          <select id="taskFilter">
+            <option value="all">Semua</option>
+            <option value="pending">Belum Selesai</option>
+            <option value="completed">Selesai</option>
+            <option value="important">Penting</option>
+          </select>
+        </div>
+
+        <ul id="taskList" class="list"></ul>
+      </section>
+
+      <section class="card" id="notesCard">
+        <h2>Catatan</h2>
+        <form id="noteForm" class="inline-form">
+          <input id="noteTitle" placeholder="Judul catatan" required />
+          <button type="submit">Simpan</button>
+        </form>
+
+        <textarea id="noteBody" placeholder="Tulis catatan..." rows="6"></textarea>
+        <ul id="notesList" class="list"></ul>
+      </section>
+
+      <section class="card" id="scheduleCard">
+        <h2>Jadwal Kuliah / Kegiatan</h2>
+        <form id="scheduleForm" class="inline-form">
+          <input id="schedTitle" placeholder="Kegiatan" required />
+          <input id="schedTime" type="datetime-local" required />
+          <button type="submit">Tambah</button>
+        </form>
+        <ul id="schedList" class="list"></ul>
+      </section>
+
+      <section class="card" id="asyncCard">
+        <h2>Cuaca Real-Time</h2>
+        <p id="asyncInfo">Klik tombol untuk memuat info singkat (simulasi fetch).</p>
+        <button id="loadInfoBtn">Muat Info</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
