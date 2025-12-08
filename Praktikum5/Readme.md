@@ -59,6 +59,7 @@ python library_system.py
 **3. Tampilan Cari Item**
 ![Cari Item](./Dokumentasi/CariItem.png)
 
+
                     <<abstract>>
                    LibraryItem
               -----------------------
