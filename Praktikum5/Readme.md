@@ -58,3 +58,33 @@ python library_system.py
 
 **3. Tampilan Cari Item**
 ![Cari Item](./Dokumentasi/CariItem.png)
+
+                    <<abstract>>
+                   LibraryItem
+              -----------------------
+              - _item_id
+              - __title
+              -----------------------
+              + title (property)
+              + display_info()*
+              -----------------------
+
+             /                       \
+            /                         \
+
+         Book                        Magazine
+  --------------------        --------------------
+  - author                  - issue_number
+  - pages                   --------------------
+  --------------------      + display_info()
+  + display_info()
+
+  
+                     Library
+            -------------------------
+            - __collection : list
+            -------------------------
+            + add_item(item)
+            + show_items()
+            + search_item(keyword)
+            -------------------------
