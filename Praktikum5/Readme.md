@@ -57,7 +57,7 @@ python library_system.py
 ![Tampilan Semua Item](./Dokumentasi/SemuaItem.png)
 
 ### 3. Tampilan Cari Item  
-![Cari Item](./Dokumentasi/Caritem.png)
+![Cari Item](./Dokumentasi/CariItem.png)
 
 
 
