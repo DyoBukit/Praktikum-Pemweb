@@ -50,42 +50,11 @@ python library_system.py
 
 ## Screenshot Hasil Running Program
 
-**1. Tampilan Tambah Item**
+**1. Tampilan Tambah Item**  
 ![Tambah Item](./Dokumentasi/TambahItem.png)
 
-**2. Tampilan Semua Item**
+**2. Tampilan Semua Item**  
 ![Semua Item](./Dokumentasi/SemuaItem.png)
 
-**3. Tampilan Cari Item**
-![Cari Item](./Dokumentasi/CariItem.png)
-
-
-                    <<abstract>>
-                   LibraryItem
-              -----------------------
-              - _item_id
-              - __title
-              -----------------------
-              + title (property)
-              + display_info()*
-              -----------------------
-
-             /                       \
-            /                         \
-
-         Book                        Magazine
-  --------------------        --------------------
-  - author                  - issue_number
-  - pages                   --------------------
-  --------------------      + display_info()
-  + display_info()
-
-  
-                     Library
-            -------------------------
-            - __collection : list
-            -------------------------
-            + add_item(item)
-            + show_items()
-            + search_item(keyword)
-            -------------------------
+**3. Tampilan Cari Item**  
+![Cari Item](./Dokumentasi/Caritem.png)
