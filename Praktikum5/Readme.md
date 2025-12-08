@@ -59,6 +59,41 @@ python library_system.py
 ### 3. Tampilan Cari Item  
 ![Cari Item](./Dokumentasi/CariItem.png)
 
+---
 
+## Diagram Class (Opsional – Nilai Tambah)
 
+Diagram berikut menggambarkan hubungan antar class pada sistem manajemen perpustakaan:
 
+```mermaid
+classDiagram
+    class LibraryItem {
+        <<abstract>>
+        -_item_id : str
+        -__title : str
+        +get_title() str
+        +display_info()* 
+    }
+
+    class Book {
+        +display_info()
+        +author : str
+        +pages : int
+    }
+
+    class Magazine {
+        +display_info()
+        +issue : str
+        +publisher : str
+    }
+
+    class Library {
+        -__collection : list
+        +add_item(item)
+        +show_all_items()
+        +search_item(query)
+    }
+
+    LibraryItem <|-- Book
+    LibraryItem <|-- Magazine
+    Library "1" *-- "*" LibraryItem
