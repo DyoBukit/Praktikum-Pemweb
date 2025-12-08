@@ -1,26 +1,50 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import useLocalStorage from '../hooks/useLocalStorage';
+import React, { createContext, useContext } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const BookContext = createContext();
 
-export const useBooks = () => useContext(BookContext);
-
 export const BookProvider = ({ children }) => {
-  const [stored, setStored] = useLocalStorage('books_v1', []);
-  const [books, setBooks] = useState(stored);
+  const [books, setBooks] = useLocalStorage("books", []);
 
-  useEffect(() => {
-    setStored(books);
-  }, [books, setStored]);
+  const addBook = (book) => {
+    setBooks([...books, { id: Date.now(), ...book }]);
+  };
 
-  const addBook = (book) => setBooks((s) => [...s, book]);
-  const updateBook = (id, patch) => setBooks((s) => s.map(b => b.id === id ? { ...b, ...patch } : b));
-  const removeBook = (id) => setBooks((s) => s.filter(b => b.id !== id));
-  const clearAll = () => setBooks([]);
+  const updateBook = (id, updatedBook) => {
+    setBooks(books.map((b) => (b.id === id ? { ...b, ...updatedBook } : b)));
+  };
+
+  const deleteBook = (id) => {
+    setBooks(books.filter((b) => b.id !== id));
+  };
+
+  // 🔥 Ini yang tadi belum ada → Sekarang ditambahkan
+  const filterBooks = (category, search) => {
+    let filtered = [...books];
+
+    if (category !== "Semua") {
+      filtered = filtered.filter((b) => b.status === category);
+    }
+
+    if (search) {
+      filtered = filtered.filter(
+        (b) =>
+          b.title.toLowerCase().includes(search.toLowerCase()) ||
+          b.author.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+    return filtered;
+  };
 
   return (
-    <BookContext.Provider value={{ books, addBook, updateBook, removeBook, clearAll }}>
+    <BookContext.Provider
+      value={{ books, addBook, updateBook, deleteBook, filterBooks }}
+    >
       {children}
     </BookContext.Provider>
   );
 };
+
+// Custom Hook pemanggil context
+export const useBooks = () => useContext(BookContext);

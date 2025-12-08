@@ -1,33 +1,30 @@
-import React, { useState } from 'react';
-import BookForm from '../../components/BookForm/BookForm';
-import BookList from '../../components/BookList/BookList';
-import BookFilter from '../../components/BookFilter/BookFilter';
-import { useBooks } from '../../context/BookContext';
-import useDebounce from '../../hooks/useDebounce';
+import React, { useState } from "react";
+import BookFilter from "../components/BookFilter";
+import Tasks from "../components/Tasks";
 
-export default function Home() {
-  const { books, updateBook } = useBooks();
-  const [filter, setFilter] = useState('all');
-  const [query, setQuery] = useState('');
-  const [editing, setEditing] = useState(null);
-  const debQuery = useDebounce(query, 250);
-
-  const startEdit = (id) => {
-    const b = books.find(x => x.id === id);
-    if (b) setEditing(b);
-  };
+const Home = () => {
+  const [filter, setFilter] = useState("All");
+  const [status, setStatus] = useState("All");
 
   return (
-    <div>
-      <BookFilter filter={filter} setFilter={setFilter} query={query} setQuery={setQuery} />
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
-        <div>
-          <BookForm editing={editing} onDone={() => setEditing(null)} />
-        </div>
-        <div>
-          <BookList filter={filter} query={debQuery} />
-        </div>
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold text-orange-400 mb-6">
+          Task Manager
+        </h1>
+
+        {/* Pakai BookFilter */}
+        <BookFilter
+          filter={filter}
+          onFilterChange={setFilter}
+          status={status}
+          onStatusChange={setStatus}
+        />
+
+        <Tasks filter={filter} status={status} />
       </div>
     </div>
   );
-}
+};
+
+export default Home;

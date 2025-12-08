@@ -1,18 +1,31 @@
-import React from 'react';
+import React from "react";
 
-export default function BookFilter({ filter, setFilter, query, setQuery }) {
+const BookFilter = ({ filter, onFilterChange, status, onStatusChange }) => {
   return (
-    <div className="card">
-      <div className="filter-row">
-        <select value={filter} onChange={e => setFilter(e.target.value)} className="input">
-          <option value="all">Semua</option>
-          <option value="owned">Milik</option>
-          <option value="reading">Sedang Baca</option>
-          <option value="wishlist">Ingin Beli</option>
-        </select>
+    <div className="flex gap-4 mb-6">
 
-        <input placeholder="Cari judul atau penulis..." value={query} onChange={e => setQuery(e.target.value)} className="input" />
-      </div>
+      <select
+        value={filter}
+        onChange={(e) => onFilterChange(e.target.value)}
+        className="bg-gray-800 px-4 py-2 rounded-lg focus:outline-none"
+      >
+        <option value="All">All</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+      </select>
+
+      <select
+        value={status}
+        onChange={(e) => onStatusChange(e.target.value)}
+        className="bg-gray-800 px-4 py-2 rounded-lg focus:outline-none"
+      >
+        <option value="All">All</option>
+        <option value="Done">Done</option>
+        <option value="Pending">Pending</option>
+      </select>
+
     </div>
   );
-}
+};
+
+export default BookFilter;

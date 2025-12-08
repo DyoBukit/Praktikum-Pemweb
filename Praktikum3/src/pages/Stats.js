@@ -1,6 +1,6 @@
 import React from 'react';
-import { useBooks } from '../../context/BookContext';
-import useBookStats from '../../hooks/useBookStats';
+import { useBooks } from '../context/BookContext';
+import useBookStats from '../hooks/useBookStats';
 
 export default function Stats() {
   const { books } = useBooks();
