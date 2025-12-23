@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Stats from "./pages/Stats";
 import { BookProvider } from "./context/BookContext";
@@ -7,6 +8,7 @@ export default function App() {
   return (
     <BookProvider>
       <BrowserRouter>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stats" element={<Stats />} />
