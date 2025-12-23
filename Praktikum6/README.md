@@ -115,49 +115,6 @@ GET /api/matakuliah
 Invoke-WebRequest -Uri "http://localhost:6543/api/matakuliah" -Method GET -UseBasicParsing | Select-Object -ExpandProperty Content
 ```
 
-**Response (200 OK):**
-```json
-{
-  "matakuliahs": [
-    {
-      "id": 1,
-      "kode_mk": "IF101",
-      "nama_mk": "Algoritma dan Pemrograman",
-      "sks": 3,
-      "semester": 1
-    },
-    {
-      "id": 2,
-      "kode_mk": "IF102",
-      "nama_mk": "Struktur Data",
-      "sks": 3,
-      "semester": 2
-    },
-    {
-      "id": 3,
-      "kode_mk": "IF103",
-      "nama_mk": "Basis Data",
-      "sks": 4,
-      "semester": 2
-    },
-    {
-      "id": 4,
-      "kode_mk": "IF104",
-      "nama_mk": "Pemrograman Web",
-      "sks": 3,
-      "semester": 3
-    },
-    {
-      "id": 5,
-      "kode_mk": "IF105",
-      "nama_mk": "Sistem Operasi",
-      "sks": 3,
-      "semester": 3
-    }
-  ]
-}
-```
-
 **Screenshot:**
 ![Semua Matakuliah](assets/SemuaMatkul.png)
 
