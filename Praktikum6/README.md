@@ -287,6 +287,12 @@ Invoke-WebRequest -Uri "http://localhost:6543/api/matakuliah/2" `
     -UseBasicParsing | Select-Object -ExpandProperty Content
 ```
 
+**Screenshot:**
+![Menampilkan Matakuliah 1](assets/MenampilkanMatkul(FiturFilter).png)
+![Menampilkan Matakuliah 1](assets/MenampilkanMatkul(SetelahFilter).png)
+
+---
+
 **Response (200 OK):**
 ```json
 {
@@ -295,20 +301,6 @@ Invoke-WebRequest -Uri "http://localhost:6543/api/matakuliah/2" `
   "nama_mk": "Struktur Data - Advanced",
   "sks": 4,
   "semester": 3
-}
-```
-
-**Error Response (404 Not Found):**
-```json
-{
-  "error": "Matakuliah tidak ditemukan"
-}
-```
-
-**Validasi Error:**
-```json
-{
-  "error": "Semester harus antara 1-8"
 }
 ```
 
@@ -495,17 +487,6 @@ ID | Kode | Nama | SKS | Semester
    - Harus antara 1-8
    - Wajib diisi
 
-### Error Messages:
-
-| Error | Status | Message |
-|-------|--------|---------|
-| Field Kosong | 400 | `Field {field} harus diisi` |
-| Invalid Type | 400 | `SKS dan Semester harus berupa angka` |
-| Invalid Range | 400 | `Semester harus antara 1-8` |
-| Duplicate Kode | 400 | `Kode matakuliah sudah terdaftar` |
-| Not Found | 404 | `Matakuliah tidak ditemukan` |
-| Server Error | 500 | `Error: {detail}` |
-
 ---
 
 ## 📁 Struktur Proyek
@@ -533,60 +514,6 @@ Praktikum6/
 
 ---
 
-## 🛠️ Troubleshooting
-
-### Server tidak berjalan
-
-**Masalah:** `ModuleNotFoundError: No module named 'pyramid'`
-
-**Solusi:**
-```bash
-pip install -r requirements.txt
-```
-
-### Database error
-
-**Masalah:** Database file tidak ditemukan
-
-**Solusi:**
-```bash
-python init_db.py
-```
-
-### Port 6543 sudah digunakan
-
-**Masalah:** `Address already in use`
-
-**Solusi:**
-```powershell
-# Kill process yang menggunakan port 6543
-Get-Process | Where-Object {$_.Id -eq (netstat -aon | findstr :6543 | ForEach-Object {$_.Split()[-1]}) }  | Stop-Process -Force
-```
-
----
-
-## 📝 Catatan Penting
-
-- Database menggunakan **SQLite** (file `matakuliah.db`)
-- Semua request/response dalam format **JSON**
-- Server default berjalan di **port 6543**
-- Perlu **virtual environment** untuk menjalankan proyek
-- Gunakan PowerShell dengan flag `-UseBasicParsing` untuk testing di Windows
-
----
-
-## 👨‍💻 Author
-
-**Praktikum 6 - Pyramid Framework API**
-Pemrograman Web 2024
-
----
-
-## 📄 License
-
-This project is for educational purposes only.
-
----
 
 ## 🔗 Endpoints Summary
 
@@ -601,6 +528,3 @@ This project is for educational purposes only.
 **Server**: http://localhost:6543
 
 ---
-
-*Last Updated: December 23, 2024*
-
