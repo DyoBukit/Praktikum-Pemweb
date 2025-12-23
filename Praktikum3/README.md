@@ -69,13 +69,16 @@ Aplikasi ini menggunakan **React Hooks**, **Context API**, dan **React Router** 
 - Status badges untuk setiap buku
 
 ### Halaman Statistik
-![Screenshot Statistik - Analisis Koleksi](./src/assets/HalamanStatistik.png)
+![Screenshot Statistik - Analisis Koleksi](./src/assets/HalamanStastistik.png)
 
 **Fitur pada halaman Statistik:**
 - Menampilkan total buku dalam koleksi
 - Statistik per kategori (Milik Saya, Sedang Dibaca, Ingin Dibeli)
 - Progress bar visual untuk distribusi buku
 - Informasi tambahan (total halaman, rata-rata halaman)
+
+### Halamanan Hasil Testing
+![Screenshot Testing - Hasil Testing](./src/assets/HasilTesting.png)
 
 ---
 
