@@ -1,0 +1,5 @@
+Pyramid==2.0.2
+SQLAlchemy==2.0.23
+alembic==1.13.0
+psycopg2-binary==2.9.9
+waitress==2.1.2
