@@ -59,7 +59,7 @@ Aplikasi ini menggunakan **React Hooks**, **Context API**, dan **React Router** 
 ## 🖼️ Screenshot Antarmuka
 
 ### Halaman Home (Manajemen Buku)
-![Screenshot Home - Manajemen Buku](./screenshots/home.png)
+![Screenshot Home - Manajemen Buku](./src/assets/HalamanHome.png)
 
 **Fitur pada halaman Home:**
 - Form input untuk menambah buku (Judul, Penulis, Status)
@@ -69,7 +69,7 @@ Aplikasi ini menggunakan **React Hooks**, **Context API**, dan **React Router** 
 - Status badges untuk setiap buku
 
 ### Halaman Statistik
-![Screenshot Statistik - Analisis Koleksi](./screenshots/stats.png)
+![Screenshot Statistik - Analisis Koleksi](./src/assets/HalamanStastistik.png)
 
 **Fitur pada halaman Statistik:**
 - Menampilkan total buku dalam koleksi
@@ -77,6 +77,8 @@ Aplikasi ini menggunakan **React Hooks**, **Context API**, dan **React Router** 
 - Progress bar visual untuk distribusi buku
 - Informasi tambahan (total halaman, rata-rata halaman)
 
+### Hasil Testing
+![Screenshot Testing - Hasil Testing](./src/assets/HasilTesting.png)
 ---
 
 ## 🎯 Penjelasan Fitur React yang Digunakan
